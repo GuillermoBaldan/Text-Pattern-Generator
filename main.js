@@ -2,7 +2,7 @@ const fs = require('fs');
 
 // Ruta al archivo input.txt
 const filePath = 'input.txt';
-
+const generateDictionary = require('./generatePattern');
 //Functions
 function dividirTextoEnPalabras(texto) {
     return texto.match(/[¿?.]|[\wáéíóúü]+/g) || [];
