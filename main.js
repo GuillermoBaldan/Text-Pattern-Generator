@@ -2,11 +2,8 @@ const fs = require('fs');
 
 // Ruta al archivo input.txt
 const filePath = 'input.txt';
-const generateDictionary = require('./generatePattern');
-//Functions
-function dividirTextoEnPalabras(texto) {
-    return texto.match(/[¿?.]|[\wáéíóúü]+/g) || [];
-  }
+const generatePattern = require('./generatePattern');
+const dividirTextoEnPalabras = require('./dividirTextoEnPalabras')
 
 
 // Leer el archivo input.txt
@@ -24,7 +21,12 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     // Suponiendo que tienes un array llamado "textos"
  console.log(textos);
      const arraySequences = textos.map(dividirTextoEnPalabras);
-
-
-  console.log(arraySequences)
+     console.log(arraySequences)
+    const patternArray = arraySequences.map(generatePattern)
+    console.log(patternArray);
+    const input = "Luis tiene 31 años. ¿Cuál es la edad de Luis? La edad de Luis es 31 años."
+    const inputPattern = generatePattern(dividirTextoEnPalabras(input))
+    console.log(inputPattern)
 });
+
+module.exports

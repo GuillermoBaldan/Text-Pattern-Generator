@@ -1,4 +1,4 @@
-function generateDictionary(arr) {
+function generatePattern(arr) {
     const dictionary = {};
     
     arr.forEach((word, index) => {
@@ -17,8 +17,8 @@ function generateDictionary(arr) {
   }
   
   // Ejemplo de uso
-  const arrayInput = ['hola', 'adiós', 'hola', 'cómo', 'estás', 'hola'];
-  const result = generateDictionary(arrayInput);
-  console.log(result);
+  /* const arrayInput = ['hola', 'adiós', 'hola', 'cómo', 'estás', 'hola'];
+  const result = generatePattern(arrayInput);
+  console.log(result); */
   
-  module.exports = generateDictionary;
+  module.exports = generatePattern
