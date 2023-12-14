@@ -1,4 +1,4 @@
-function generateFraseFromIdSequence(idSequence, dictionary) {
+function generatePhraseFromIdSequence(idSequence, dictionary) {
    
   frase = idSequence.map(id => dictionary[id])
   frase = frase.join(' ');
@@ -17,6 +17,9 @@ function generateFraseFromIdSequence(idSequence, dictionary) {
     6: '?'
   };
   
-  const fraseGenerada = generateFraseFromIdSequence(idSequence, dictionary);
+  const fraseGenerada = function generatePhraseFromIdSequence(idSequence, dictionary);
+
   console.log(fraseGenerada);
   
+
+  module.exports = generatePhraseFromIdSequence;

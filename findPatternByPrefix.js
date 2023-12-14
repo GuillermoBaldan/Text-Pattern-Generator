@@ -110,3 +110,4 @@ function findPatternByPrefix(pattern, patternArray) {
   const foundPattern = findPatternByPrefix(pattern, patternArray);
   console.log(foundPattern);
   
+  module.exports = findPatternByPrefix;
