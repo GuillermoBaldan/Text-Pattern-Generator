@@ -11,6 +11,7 @@ const dividirTextoEnPalabras = require('./dividirTextoEnPalabras')
 const findPatternByPrefix = require('./findPatternByPrefix');
 const generatePhraseFromIdSequence = require('./generatePhraseFromIdSequence');
 const reconstructDictionary = require('./reconstructDictionary');
+const quitarRetornos = require('./quitarRetornos');
 
 
 function main(data,argumento){
@@ -19,22 +20,23 @@ function main(data,argumento){
  //console.log(data);
    // Dividir el texto en arrays basados en el carácter $
    const textos = data.split('$');
+   const textosLimpios = quitarRetornos(textos);
    // Suponiendo que tienes un array llamado "textos"
-//console.log(textos);
-    const arraySequences = textos.map(dividirTextoEnPalabras);
-    console.log(arraySequences)
+ //console.log(textosLimpios);
+    const arraySequences = textosLimpios.map(dividirTextoEnPalabras);
+   // console.log(arraySequences)
    const patternArray = arraySequences.map(generatePattern)
-   //console.log(patternArray);
+  // console.log(patternArray);
  /*   const input = "Luis tiene 31 años. ¿Cuál es la edad de Luis? La edad de Luis es 31 años." */
    const inputPattern = generatePattern(dividirTextoEnPalabras(argumento))
-   //console.log(inputPattern)
+  // console.log(inputPattern)
    const foundPattern = findPatternByPrefix(inputPattern,patternArray);
    //console.log(foundPattern);
    //console.log(inputPattern.dictionary)
    //console.log(foundPattern.idSequence)
    reconstructedDictionary = reconstructDictionary(inputPattern.dictionary,foundPattern.dictionary);
    const fraseGenerada  = generatePhraseFromIdSequence(foundPattern.idSequence,reconstructedDictionary);
-   //console.log(fraseGenerada);
+   console.log(fraseGenerada);
 }
 
 // Leer el archivo input.txt

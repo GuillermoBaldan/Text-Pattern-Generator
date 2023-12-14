@@ -4,7 +4,7 @@ function generatePhraseFromIdSequence(idSequence, dictionary) {
     return key !== undefined ? key : id;
   });
 
-  return replacedSequence.join(' ');
+  return replacedSequence.join('');
 }
     
     // Ejemplo de uso
