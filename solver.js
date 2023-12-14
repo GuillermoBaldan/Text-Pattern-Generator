@@ -10,12 +10,12 @@ const generatePattern = require('./generatePattern');
 const dividirTextoEnPalabras = require('./dividirTextoEnPalabras')
 const findPatternByPrefix = require('./findPatternByPrefix');
 const generatePhraseFromIdSequence = require('./generatePhraseFromIdSequence');
-
+const reconstructDictionary = require('./reconstructDictionary');
 
 
 function main(data,argumento){
  // Mostrar el contenido del archivo en la consola
- console.log('Contenido de input.txt:');
+ //console.log('Contenido de input.txt:');
  //console.log(data);
    // Dividir el texto en arrays basados en el carácter $
    const textos = data.split('$');
@@ -29,9 +29,12 @@ function main(data,argumento){
    const inputPattern = generatePattern(dividirTextoEnPalabras(argumento))
    //console.log(inputPattern)
    const foundPattern = findPatternByPrefix(inputPattern,patternArray);
-   console.log(foundPattern)
-   const fraseGenerada  = generatePhraseFromIdSequence(inputPattern.idSequence,foundPattern.dictionary);
-   console.log(fraseGenerada)
+   //console.log(foundPattern);
+   console.log(inputPattern.dictionary)
+   //console.log(foundPattern.idSequence)
+   reconstructedDictionary = reconstructDictionary(inputPattern.dictionary,foundPattern.dictionary);
+   const fraseGenerada  = generatePhraseFromIdSequence(foundPattern.idSequence,reconstructedDictionary);
+   console.log(fraseGenerada);
 }
 
 // Leer el archivo input.txt
