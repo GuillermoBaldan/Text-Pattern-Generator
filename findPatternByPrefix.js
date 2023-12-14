@@ -1,8 +1,9 @@
 function findPatternByPrefix(pattern, patternArray) {
-    const targetPrefix = pattern.idSequence.slice(0, 7).join(',');
+  const limit = pattern.idSequence.length;
+    const targetPrefix = pattern.idSequence.slice(0, limit).join(',');
   
     for (const item of patternArray) {
-      const currentPrefix = item.idSequence.slice(0, 7).join(',');
+      const currentPrefix = item.idSequence.slice(0, limit).join(',');
       if (currentPrefix === targetPrefix) {
         return item;
       }

@@ -29,7 +29,7 @@ function main(data,argumento){
    const inputPattern = generatePattern(dividirTextoEnPalabras(argumento))
    //console.log(inputPattern)
    const foundPattern = findPatternByPrefix(inputPattern,patternArray);
-   //console.log(foundPattern);
+   console.log(foundPattern);
    console.log(inputPattern.dictionary)
    //console.log(foundPattern.idSequence)
    reconstructedDictionary = reconstructDictionary(inputPattern.dictionary,foundPattern.dictionary);
