@@ -1,10 +1,10 @@
 # Text Pattern Generator
 
-This repository contains a Node.js script (`solver.js`) designed to solve specific problems. The script handles input phrases and performs certain operations based on the defined logic.
+This repository contains a Node.js script (`solver.js`) designed to solve specific problems based on phrases contained within the `corpus.txt` file. The script handles input phrases and performs certain operations based on the implicit logic extracted from the `corpus.txt`.
 
 ## Description
 
-The `solver.js` script is built to process input phrases and carry out specific tasks, such as escaping characters or performing manipulations based on predefined patterns. The script is flexible and can handle various types of input phrases.
+The `solver.js` script is built to process input phrases and derive specific patterns or logic from the contents of the `corpus.txt`. It carries out tasks such as escaping characters or applying transformations based on the implicit patterns found within the corpus. The script is flexible and adapts its behavior to the phrases present in `corpus.txt`.
 
 ## Usage
 
@@ -29,6 +29,14 @@ To execute the `solver.js` script, follow these steps:
     ```
 
     Replace `"Your input phrase here"` with the phrase you want to process.
+
+## Example
+
+Here's an example of how to use the `solver.js` script:
+
+```bash
+node solver.js "Escribe en python un script que muestre por pantalla \"Hola Luis\""
+
 
 ## Example
 
