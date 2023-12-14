@@ -5,7 +5,7 @@ const argumento = process.argv.slice(2).join(' ');
 const fs = require('fs');
 
 // Ruta al archivo input.txt
-const filePath = 'input.txt';
+const filePath = 'corpus.txt';
 const generatePattern = require('./generatePattern');
 const dividirTextoEnPalabras = require('./dividirTextoEnPalabras')
 const findPatternByPrefix = require('./findPatternByPrefix');
@@ -19,6 +19,7 @@ function main(data,argumento){
  //console.log('Contenido de input.txt:');
  //console.log(data);
    // Dividir el texto en arrays basados en el carácter $
+   //console.log(argumento)
    const textos = data.split('$');
    const textosLimpios = quitarRetornos(textos);
    // Suponiendo que tienes un array llamado "textos"
@@ -29,7 +30,7 @@ function main(data,argumento){
   // console.log(patternArray);
  /*   const input = "Luis tiene 31 años. ¿Cuál es la edad de Luis? La edad de Luis es 31 años." */
    const inputPattern = generatePattern(dividirTextoEnPalabras(argumento))
-  // console.log(inputPattern)
+   //console.log(inputPattern)
    const foundPattern = findPatternByPrefix(inputPattern,patternArray);
    //console.log(foundPattern);
    //console.log(inputPattern.dictionary)
